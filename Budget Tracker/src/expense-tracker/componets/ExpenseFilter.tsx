@@ -10,13 +10,20 @@ const ExpenseFilter = ({ onSelectCategory }: Props) => {
 		</option>
 	));
 	return (
-		<select
-			className="form-select"
-			onChange={(event) => onSelectCategory(event.target.value)}
-		>
-			<option value=""> All Categories</option>
-			{displayCatergoryDrop}
-		</select>
+		<>
+			<div className="dropdown-menu d-block position-static shadow  w-280px">
+				<div className="dropdown-item gap-2 py-2">
+					<select
+						className="form-select"
+						onChange={(event) => onSelectCategory(event.target.value)}
+					>
+						<option value=""> All Categories</option>
+
+						{displayCatergoryDrop}
+					</select>
+				</div>
+			</div>
+		</>
 	);
 };
 

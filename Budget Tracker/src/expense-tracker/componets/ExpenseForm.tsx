@@ -43,60 +43,65 @@ const ExpenseForm = ({ onSubmit }: Props) => {
 	));
 
 	return (
-		<form
-			onSubmit={handleSubmit((data) => {
-				onSubmit(data);
-				reset();
-			})}
-		>
-			{/* Description*/}
-			<div className="mb-3">
-				<label htmlFor="description" className="form-label">
-					Description
-				</label>
-				<input
-					{...register("description")}
-					id="description"
-					type="text"
-					className="form-control"
-				/>
-			</div>
-			{errors.description && (
-				<p className="text-danger">{errors.description.message}</p>
-			)}
+		<>
+			<form
+				onSubmit={handleSubmit((data) => {
+					onSubmit(data);
+					reset();
+				})}
+			>
+				{/* Description*/}
+				<div className="mb-3">
+					<label htmlFor="description" className="form-label">
+						Description
+					</label>
+					<input
+						{...register("description")}
+						id="description"
+						type="text"
+						className="form-control"
+					/>
+				</div>
+				{errors.description && (
+					<p className="text-danger">{errors.description.message}</p>
+				)}
 
-			{/* Amount*/}
-			<div className="mb-3">
-				<label htmlFor="amount" className="form-label">
-					Amount
-				</label>
-				<input
-					{...register("amount", { valueAsNumber: true })}
-					id="amount"
-					type="number"
-					className="form-control"
-				/>
-			</div>
-			{errors.amount && <p className="text-danger">{errors.amount?.message}</p>}
-			{/* Different categories*/}
-			<div className="mb-3">
-				<label htmlFor="categories" className="form-label">
-					Categories
-				</label>
-				<select
-					{...register("category")}
-					id="categories"
-					className="form-select"
-				>
-					<option value=""></option>
-					{displayCatergoryDrop}
-				</select>
-			</div>
-			{errors.category && (
-				<p className="text-danger">{errors.category?.message}</p>
-			)}
-			<button className="btn btn-primary">Submit</button>
-		</form>
+				{/* Amount*/}
+				<div className="mb-3">
+					<label htmlFor="amount" className="form-label">
+						Amount
+					</label>
+					<input
+						{...register("amount", { valueAsNumber: true })}
+						id="amount"
+						type="number"
+						className="form-control"
+					/>
+				</div>
+				{errors.amount && (
+					<p className="text-danger">{errors.amount?.message}</p>
+				)}
+				{/* Different categories*/}
+				<div className="mb-3">
+					<label htmlFor="categories" className="form-label">
+						Categories
+					</label>
+
+					<select
+						{...register("category")}
+						id="categories"
+						className="form-select"
+					>
+						<option value=""></option>
+						{displayCatergoryDrop}
+					</select>
+				</div>
+				{errors.category && (
+					<p className="text-danger">{errors.category?.message}</p>
+				)}
+				<button className="btn btn-btn btn-secondary">Submit</button>
+			</form>
+		</>
 	);
 };
 
