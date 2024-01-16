@@ -9,15 +9,6 @@ function App() {
 	//default state
 	const [expenses, setExpenes] = useState([
 		{ id: 1, description: "Car Payment", amount: 500, category: "Important" },
-		{ id: 2, description: "Rent", amount: 1000, category: "Important" },
-		{ id: 3, description: "Popeyes", amount: 10, category: "Not Important" },
-		{ id: 4, description: "New Mouse", amount: 70, category: "Not Important" },
-		{
-			id: 5,
-			description: "Protien Shake",
-			amount: 10,
-			category: "Semi Important",
-		},
 	]);
 
 	const visibileExpenses = selectedCategory
